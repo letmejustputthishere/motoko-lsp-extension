@@ -15,12 +15,11 @@ import {
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
-	// The server is implemented in node
-	let dfxBinaryPath = 
+	// This is the path to your dfx binary 
+	let dfxBinaryPath =
 		path.join('/usr/local/bin/dfx')
-	;
-	// The debug options for the server
-	// --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
+		;
+	// This is the argument for dfx to invoke the language server
 	let serverArgsRun = ['_language-service'];
 
 	// If the extension is launched in debug mode then the debug server options are used
