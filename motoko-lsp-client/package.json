@@ -4,12 +4,17 @@
 	"author": "Moritz Fuller",
 	"publisher": "motoko-lsp-client",
 	"license": "MIT",
-	"version": "1.4.0",
+	"version": "1.5.0",
+	"icon": "serveimage.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/letmejustputthishere/motoko-lsp-extension"
 	},
-	"categories": [],
+	"categories": [
+		"Programming Languages",
+		"Extension Packs",
+		"Linters"
+	],
 	"keywords": [
 		"dfx",
 		"motoko",
@@ -23,6 +28,18 @@
 	],
 	"main": "./client/out/extension",
 	"contributes": {
+		"languages": [
+			{
+				"id": "motoko",
+				"aliases": [
+					"motoko",
+					"motoko"
+				],
+				"extensions": [
+					"mo"
+				]
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "Example configuration",
