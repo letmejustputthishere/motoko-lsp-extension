@@ -1,6 +1,6 @@
 {
-	"name": "vsc-extension-samples",
-	"publisher": "Microsoft",
+	"name": "motoko-lsp-extension",
+	"publisher": "motoko-lsp-client",
 	"version": "0.0.1",
 	"scripts": {
 		"compile": "node .scripts/run-script.js compile",
