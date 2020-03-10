@@ -1,11 +1,58 @@
 {
-	"name": "motoko-lsp-extension",
+	"name": "motoko-lsp-client",
+	"displayName": "motoko",
+	"readme": "README.md",
+	"description": "Reports Motoko compiler errors and provides code completion and refactoring tools.",
+	"author": "Moritz Fuller",
 	"publisher": "motoko-lsp-client",
-	"version": "0.0.1",
+	"license": "MIT",
+	"version": "1.7.0",
+	"icon": "serveimage.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/letmejustputthishere/motoko-lsp-extension"
+	},
+	"categories": [
+		"Programming Languages",
+		"Extension Packs",
+		"Linters"
+	],
+	"keywords": [
+		"dfx",
+		"motoko",
+		"dfinity"
+	],
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"activationEvents": [
+		"onLanguage:motoko"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "motoko",
+				"aliases": [
+					"motoko",
+					"motoko"
+				],
+				"extensions": [
+					"mo"
+				]
+			}
+		]
+	},
 	"scripts": {
-		"compile": "node .scripts/run-script.js compile",
-		"install": "node .scripts/run-install.js",
-		"lint": "node .scripts/run-script.js lint",
-		"update-readme": "node .scripts/update-readme.js"
+		"vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd .."
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"tslint": "^5.16.0",
+		"typescript": "^3.6.4"
 	}
 }
