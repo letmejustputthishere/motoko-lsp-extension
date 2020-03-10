@@ -16,8 +16,11 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	// This is the path to your dfx binary 
+	const { execSync } = require('child_process');
+	let stdout = execSync('dfx cache show');
+	let stdoutString = stdout.toString().replace(/(\r\n|\n|\r)/gm, "");
 	let dfxBinaryPath =
-		path.join('/usr/local/bin/dfx')
+		path.join(stdoutString+'/dfx')
 		;
 	// This is the argument for dfx to invoke the language server
 	let serverArgsRun = ['_language-service'];
