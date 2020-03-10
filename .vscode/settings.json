@@ -1,0 +1,10 @@
+{
+	"editor.insertSpaces": false,
+	"tslint.enable": true,
+	"typescript.tsc.autoDetect": "off",
+	"typescript.preferences.quoteStyle": "single",
+	"prettier.semi": true,
+	"prettier.printWidth": 92,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true
+}
